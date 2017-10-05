@@ -1,11 +1,11 @@
 from django.contrib import admin
 from .models import *
-admin.register(Farmer)
-admin.register(House)
-admin.register(Members)
-admin.register(PublicPlaces)
-admin.register(Farm)
-admin.register(Crop)
-admin.register(Wells)
-admin.register(Farmpoints)
+admin.site.register(Farmer)
+admin.site.register(House)
+admin.site.register(Members)
+admin.site.register(PublicPlaces)
+admin.site.register(Farm)
+admin.site.register(Crop)
+admin.site.register(Wells)
+admin.site.register(Farmpoints)
 # Register your models here.
