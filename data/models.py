@@ -14,7 +14,7 @@ class Farmer(models.Model):
     Photo=models.FileField()
 
     def __str__(self):
-	    return self.Name
+        return self.Name
 
 class House(models.Model):
     Lat=models.FloatField()
