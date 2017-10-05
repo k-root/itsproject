@@ -1,9 +1,6 @@
 from django.db import models
 
-# Create your models here.
-from __future__ import unicode_literals
-from django.db import models
-
+# Create your models here
 class Farmer(models.Model):
     Name=models.CharField(max_length=50)
     Gender=models.CharField(max_length=6)
