@@ -1,0 +1,88 @@
+from django.db import models
+
+# Create your models here.
+from __future__ import unicode_literals
+from django.db import models
+
+class Farmer(models.Model):
+    Name=models.CharField(max_length=50)
+    Gender=models.CharField(max_length=6)
+    DoB=models.DateField()
+    Aadhar=models.CharField(max_length=12)
+    Number=models.CharField(max_length=10)
+    Income=models.IntegerField()
+    Photo=models.FileField()
+
+    def __str__(self):
+		return self.Name
+
+class House(models.Model):
+    Lat=models.FloatField()
+    Lon=models.FloatField()
+    NoP=models.IntegerField()
+    F_id=models.ForeignKey(Farmer, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.F_id.Name
+
+class Members(models.Model):
+    Name=models.CharField(max_length=50)
+    Gender=models.CharField(max_length=7)
+    DoB=models.DateField()
+    Aadhar=models.CharField(max_length=12)
+    Photo=models.FileField()
+    Relation=models.CharField(max_length=12)
+    Audio=models.FileField()
+    F_id=models.ForeignKey(Farmer, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.Name
+
+class PublicPlaces(models.Model):
+    Lat=models.FloatField()
+    Lon=models.FloatField()
+    Type=models.CharField(max_length=20)
+    Name=models.CharField(max_length=30)
+    Village=models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.Name
+
+class Farm(models.Model):
+    Area=models.FloatField()
+    Income=models.IntegerField()
+    F_id=models.ForeignKey(Farmer, on_delete=models.CASCADE)
+    Village=models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.F_id.Name
+
+class Farmpoints(models.Model):
+    Seqno=models.IntegerField()
+    Lat=models.FloatField()
+    Lon=models.FloatField()
+    Farm_id=models.ForeignKey(Farm, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.Farm_id.F_id.Name
+
+class Wells(models.Model):
+    Lat=models.FloatField()
+    Lon=models.FloatField()
+    Depth=models.FloatField()
+    Status=models.BooleanField()
+    AvgYield=models.FloatField()
+    Photo=models.FileField()
+    Farm_id=models.ForeignKey(Farm, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.Farm_id.Village
+
+class Crop(models.Model):
+    Season=models.CharField(max_length=10)
+    Year=models.IntegerField()
+    Name=models.CharField(max_length=20)
+    Percentage=models.FloatField()
+    Income=models.IntegerField()
+    Photo=models.FileField()
+    Farm_id=models.ForeignKey(Farm, on_delete=models.CASCADE)
