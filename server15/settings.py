@@ -25,7 +25,7 @@ SECRET_KEY = 'o)_edf(5^h=3y%4y1t_b9u*_hkk6hrk7=7*benim*^a&)^4jz8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -77,8 +77,9 @@ WSGI_APPLICATION = 'server15.wsgi.application'
 DATABASES = {
     'default': {
          'ENGINE': 'django.contrib.gis.db.backends.postgis',
-         'NAME': 'itsproject',
-         'USER': 'utkal',
+         'NAME': 'group15',
+         'USER': 'group15',
+         'PASSWORD': '15',
     },
 }
 
