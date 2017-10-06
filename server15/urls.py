@@ -18,8 +18,7 @@ from django.contrib.auth.models import User
 from rest_framework import routers, serializers, viewsets
 from django.contrib import admin
 from data.models import *
-from django.conf import settings
-from django.conf.urls.static import static
+
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
@@ -27,4 +26,4 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
