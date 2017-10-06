@@ -79,3 +79,6 @@ class Crop(models.Model):
     Income=models.IntegerField()
     Photo=models.FileField()
     Farm_id=models.ForeignKey(Farm, on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return self.Farm_id.F_id.Name + str(self.id)
