@@ -14,7 +14,7 @@ class Farmer(models.Model):
         return self.Name
 
 class House(models.Model):
-    Poi=models.MultiPolygonField(default="")
+    Poi=models.PointField(default="")
     NoP=models.IntegerField()
     F_id=models.ForeignKey(Farmer, on_delete=models.CASCADE)
 
