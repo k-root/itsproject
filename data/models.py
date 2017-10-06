@@ -35,7 +35,7 @@ class Members(models.Model):
         return self.Name
 
 class PublicPlaces(models.Model):
-    Poi=models.PointField()
+    Poi=models.PointField(default="")
     Type=models.CharField(max_length=20)
     Name=models.CharField(max_length=30)
     Village=models.CharField(max_length=20)
@@ -54,14 +54,14 @@ class Farm(models.Model):
 
 class Farmpoints(models.Model):
     Seqno=models.IntegerField()
-    Poi=models.PointField()
+    Poi=models.PointField(default="")
     Farm_id=models.ForeignKey(Farm, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.Farm_id.F_id.Name
 
 class Wells(models.Model):
-    Poi=models.PointField()
+    Poi=models.PointField(default="")
     Depth=models.FloatField()
     Status=models.BooleanField()
     AvgYield=models.FloatField()
