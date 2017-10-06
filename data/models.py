@@ -16,7 +16,7 @@ class Farmer(models.Model):
 class House(models.Model):
     Lat=models.FloatField()
     Lon=models.FloatField()
-    Poi=models.MultiPolygonField()
+    Poi=models.MultiPolygonField(default="")
     NoP=models.IntegerField()
     F_id=models.ForeignKey(Farmer, on_delete=models.CASCADE)
 
