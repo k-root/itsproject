@@ -14,8 +14,6 @@ class Farmer(models.Model):
         return self.Name
 
 class House(models.Model):
-    Lat=models.FloatField()
-    Lon=models.FloatField()
     Poi=models.MultiPolygonField(default="")
     NoP=models.IntegerField()
     F_id=models.ForeignKey(Farmer, on_delete=models.CASCADE)
@@ -37,8 +35,7 @@ class Members(models.Model):
         return self.Name
 
 class PublicPlaces(models.Model):
-    Lat=models.FloatField()
-    Lon=models.FloatField()
+    Poi=models.PointField()
     Type=models.CharField(max_length=20)
     Name=models.CharField(max_length=30)
     Village=models.CharField(max_length=20)
@@ -57,16 +54,14 @@ class Farm(models.Model):
 
 class Farmpoints(models.Model):
     Seqno=models.IntegerField()
-    Lat=models.FloatField()
-    Lon=models.FloatField()
+    Poi=models.PointField()
     Farm_id=models.ForeignKey(Farm, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.Farm_id.F_id.Name
 
 class Wells(models.Model):
-    Lat=models.FloatField()
-    Lon=models.FloatField()
+    Poi=models.PointField()
     Depth=models.FloatField()
     Status=models.BooleanField()
     AvgYield=models.FloatField()
