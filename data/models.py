@@ -28,7 +28,7 @@ class Members(models.Model):
     Aadhar=models.CharField(max_length=12)
     Photo=models.FileField()
     Relation=models.CharField(max_length=12)
-    Audio=models.FileField()
+    Audio=models.FileField(blank=True)
     F_id=models.ForeignKey(Farmer, on_delete=models.CASCADE)
 
     def __str__(self):
