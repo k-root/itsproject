@@ -8,7 +8,8 @@ class Farmer(models.Model):
     Aadhar=models.CharField(max_length=12)
     Number=models.CharField(max_length=10)
     Income=models.IntegerField()
-    Photo=models.FileField()
+    Photo=models.FileField(blank=True)
+    Audio=models.FileField(blank=True)
 
     def __str__(self):
         return self.Name
@@ -26,7 +27,7 @@ class Members(models.Model):
     Gender=models.CharField(max_length=7)
     DoB=models.DateField()
     Aadhar=models.CharField(max_length=12)
-    Photo=models.FileField()
+    Photo=models.FileField(blank=True)
     Relation=models.CharField(max_length=12)
     Audio=models.FileField(blank=True)
     F_id=models.ForeignKey(Farmer, on_delete=models.CASCADE)
