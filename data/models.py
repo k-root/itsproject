@@ -54,7 +54,7 @@ class Farm(models.Model):
 
 class Farmpoints(models.Model):
     Seqno=models.IntegerField()
-    Poi=models.PointField(default="")
+    Polygon=models.PolygonField(default="")
     Farm_id=models.ForeignKey(Farm, on_delete=models.CASCADE)
 
     def __str__(self):
