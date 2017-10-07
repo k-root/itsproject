@@ -26,5 +26,13 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^house/', views.housetable, name= 'housetable'),
+    url(r'^farmer/',views.farmertable, name= 'farmertable'),
+    url(r'^farm/',views.farmtable, name= 'farmtable'),
+    url(r'^farmpoints/',views.farmpointstable, name= 'farmpointstable'),
+    url(r'^wells/',views.wellstable, name= 'wellstable'),
+    url(r'^publicplaces/',views.publicplacestable, name= 'publicplacestable'),
+    url(r'^members/',views.memberstable, name= 'memberstable'),
+    url(r'^crop/',views.croptable, name= 'croptable'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
