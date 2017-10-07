@@ -78,3 +78,5 @@ def wellslist(request):
     wells= Wells.objects.all()
     wells= WellsSerializer(wells, many=True)
     return JsonResponse(wells.data, status=201, safe=False)
+
+
