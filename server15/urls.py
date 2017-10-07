@@ -20,6 +20,7 @@ from django.contrib import admin
 from data.models import *
 from django.conf import settings
 from django.conf.urls.static import static
+from data import views
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
