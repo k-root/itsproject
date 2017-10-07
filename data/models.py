@@ -66,7 +66,7 @@ class Wells(models.Model):
     Depth=models.FloatField()
     Status=models.BooleanField()
     AvgYield=models.FloatField()
-    Photo=models.FileField()
+    Photo=models.FileField(blank=True)
     Farm_id=models.ForeignKey(Farm, on_delete=models.CASCADE)
     Village=models.CharField(max_length=20, default="")
     
