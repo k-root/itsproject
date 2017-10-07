@@ -18,7 +18,7 @@ class House(models.Model):
     Poi=models.PointField(default="")
     NoP=models.IntegerField()
     F_id=models.ForeignKey(Farmer, on_delete=models.CASCADE)
-    Village=models.CharField(max_length=20)
+    Village=models.CharField(max_length=20,dafault="")
     def __str__(self):
         return self.F_id.Name
 
@@ -39,7 +39,7 @@ class PublicPlaces(models.Model):
     Poi=models.PointField(default="")
     Type=models.CharField(max_length=20)
     Name=models.CharField(max_length=30)
-    Village=models.CharField(max_length=20)
+    Village=models.CharField(max_length=20,default="")
 
     def __str__(self):
         return self.Name
@@ -68,7 +68,7 @@ class Wells(models.Model):
     AvgYield=models.FloatField()
     Photo=models.FileField()
     Farm_id=models.ForeignKey(Farm, on_delete=models.CASCADE)
-    Village=models.CharField(max_length=20)
+    Village=models.CharField(max_length=20, default="")
     
     def __str__(self):
         return self.Farm_id.Village
