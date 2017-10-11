@@ -11,72 +11,72 @@ from .serializers import *
 
 # Create your views here.
 
-@detail_route(renderer_classes=(renderers.StaticHTMLRenderer,))
-@csrf_exempt
+@detail_route(renderer_classes=(renderers.StaticHTMLRenderer,))     
+@csrf_exempt                                                        #REQUEST EXEMPTION FROM csrf ERRORS
 def farmerlist(request):
-    farmer=Farmer.objects.all()
-    farmer=FarmerSerializer(farmer,many=True)
-    return JsonResponse(farmer.data, status=201,safe=False)
+    farmer=Farmer.objects.all()                                     #SELECT THE WHOLE DATA IN FARMER TABLE
+    farmer=FarmerSerializer(farmer,many=True)                       #SERIALIZE THE DATA
+    return JsonResponse(farmer.data, status=201,safe=False)         #GIVE OUT AS JSON RESPONSE
   
  
 @detail_route(renderer_classes=(renderers.StaticHTMLRenderer,))
-@csrf_exempt
+@csrf_exempt                                                        #REQUEST EXEMPTION FROM csrf ERRORS
 def farmlist(request):
-    farm=Farm.objects.all()
-    farm=FarmSerializer(farm, many=True)
-    return JsonResponse(farm.data,status=201,safe=False)
+    farm=Farm.objects.all()                                         #SELECT THE WHOLE DATA IN FARM TABLE
+    farm=FarmSerializer(farm, many=True)                            #SERIALIZE THE DATA
+    return JsonResponse(farm.data,status=201,safe=False)            #GIVE OUT AS JSON RESPONSE
 
 
 @detail_route(renderer_classes=(renderers.StaticHTMLRenderer,))
-@csrf_exempt
+@csrf_exempt                                                        #REQUEST EXEMPTION FROM csrf ERRORS
 def houselist(request):
-    house=House.objects.all()
-    house=HouseSerializer(house, many=True)
-    return JsonResponse(house.data,status=201,safe=False)
+    house=House.objects.all()                                       #SELECT THE WHOLE DATA IN HOUSE TABLE
+    house=HouseSerializer(house, many=True)                         #SERIALIZE THE DATA
+    return JsonResponse(house.data,status=201,safe=False)           #GIVE OUT AS JSON RESPONSE
   
 
 @detail_route(renderer_classes=(renderers.StaticHTMLRenderer,))
-@csrf_exempt
+@csrf_exempt                                                        #REQUEST EXEMPTION FROM csrf ERRORS
 def publicplaceslist(request):
 #  if request.method == 'POST':
-    publicplaces=PublicPlaces.objects.all()
-    publicplaces=PublicPlacesSerializer(publicplaces, many=True)
-    return JsonResponse(publicplaces.data, status=201, safe=False)
+    publicplaces=PublicPlaces.objects.all()                         #SELECT THE WHOLE DATA IN PUBLICPLACES TABLE
+    publicplaces=PublicPlacesSerializer(publicplaces, many=True)    #SERIALIZE THE DATA
+    return JsonResponse(publicplaces.data, status=201, safe=False)  #GIVE OUT AS JSON RESPONSE
   
 
 @detail_route(renderer_classes=(renderers.StaticHTMLRenderer,))
-@csrf_exempt
+@csrf_exempt                                                        #REQUEST EXEMPTION FROM csrf ERRORS
 def croplist(request):
  # if request.method =='POST':
-    crop=Crop.objects.all()
-    crop=CropSerializer(crop,many=True)
-    return JsonResponse(crop.data, status=201, safe=False)
+    crop=Crop.objects.all()                                         #SELECT THE WHOLE DATA IN CROP TABLE
+    crop=CropSerializer(crop,many=True)                             #SERIALIZE THE DATA
+    return JsonResponse(crop.data, status=201, safe=False)          #GIVE OUT AS JSON RESPONSE
 
 
 @detail_route(renderer_classes=(renderers.StaticHTMLRenderer,))
-@csrf_exempt
+@csrf_exempt                                                        #REQUEST EXEMPTION FROM csrf ERRORS
 def memberslist(request):
  # if request.method == 'POST':
-    members=Members.objects.all()
-    members=MembersSerializer(members, many=True)
-    return JsonResponse(members.data, status=201, safe=False)
+    members=Members.objects.all()                                   #SELECT THE WHOLE DATA IN MEMBERS TABLE
+    members=MembersSerializer(members, many=True)                   #SERIALIZE THE DATA
+    return JsonResponse(members.data, status=201, safe=False)       #GIVE OUT AS JSON RESPONSE
 
 
 @detail_route(renderer_classes=(renderers.StaticHTMLRenderer,))
-@csrf_exempt
+@csrf_exempt                                                        #REQUEST EXEMPTION FROM csrf ERRORS
 def farmpointslist(request):
   #if request.method == 'POST':
-    farmpoints= Farmpoints.objects.all()
-    farmpoints= FarmpointsSerializer(farmpoints, many=True)
-    return JsonResponse(farmpoints.data, status=201, safe=False)
+    farmpoints= Farmpoints.objects.all()                           #SELECT THE WHOLE DATA IN FARMPOINTS TABLE
+    farmpoints= FarmpointsSerializer(farmpoints, many=True)        #SERIALIZE THE DATA
+    return JsonResponse(farmpoints.data, status=201, safe=False)   #GIVE OUT AS JSON RESPONSE
 
 
 @detail_route(renderer_classes=(renderers.StaticHTMLRenderer,))
-@csrf_exempt
+@csrf_exempt                                                       #REQUEST EXEMPTION FROM csrf ERRORS
 def wellslist(request):
 #  if request.method == 'POST':
-    wells= Wells.objects.all()
-    wells= WellsSerializer(wells, many=True)
-    return JsonResponse(wells.data, status=201, safe=False)
+    wells= Wells.objects.all()                                     #SELECT THE WHOLE DATA IN WELLS TABLE
+    wells= WellsSerializer(wells, many=True)                       #SERIALIZE THE DATA
+    return JsonResponse(wells.data, status=201, safe=False)        #GIVE OUT AS JSON RESPONSE
 
 
