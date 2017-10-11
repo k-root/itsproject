@@ -79,7 +79,7 @@ class Crop(models.Model):
     Name=models.CharField(max_length=20)
     Percentage=models.FloatField()
     Income=models.IntegerField()
-    Photo=models.FileField()
+    Photo=models.CharField()
     Farm_id=models.ForeignKey(Farm, on_delete=models.CASCADE)
     
     def __str__(self):
