@@ -36,4 +36,4 @@ urlpatterns = [
     url(r'^publicplaces/',views.publicplaceslist, name= 'publicplaceslist'),
     url(r'^members/',views.memberslist, name= 'memberslist'),
     url(r'^crop/',views.croplist, name= 'croplist'),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
