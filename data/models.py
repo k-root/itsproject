@@ -27,7 +27,7 @@ class Members(models.Model):
     Gender=models.CharField(max_length=7)
     DoB=models.DateField()
     Aadhar=models.CharField(max_length=12)
-    Photo=models.FileField(blank=True)
+    Photo=models.CharField(blank=True)
     Relation=models.CharField(max_length=12)
     Audio=models.FileField(blank=True)
     F_id=models.ForeignKey(Farmer, on_delete=models.CASCADE)
@@ -66,7 +66,7 @@ class Wells(models.Model):
     Depth=models.FloatField()
     Status=models.BooleanField()
     AvgYield=models.FloatField()
-    Photo=models.FileField(blank=True)
+    Photo=models.CharField(blank=True)
     Farm_id=models.ForeignKey(Farm, on_delete=models.CASCADE)
     Village=models.CharField(max_length=20, default="")
     
