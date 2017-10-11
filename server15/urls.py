@@ -26,14 +26,14 @@ from data import views
 # Additionally, we include login URLs for the browsable API.
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^house/', views.houselist, name= 'houselist'),
-    url(r'^farmer/',views.farmerlist, name= 'farmerlist'),
-    url(r'^farm/',views.farmlist, name= 'farmlist'),
-    url(r'^farmpoints/',views.farmpointslist, name= 'farmpointslist'),
-    url(r'^wells/',views.wellslist, name= 'wellslist'),
-    url(r'^publicplaces/',views.publicplaceslist, name= 'publicplaceslist'),
-    url(r'^members/',views.memberslist, name= 'memberslist'),
-    url(r'^crop/',views.croplist, name= 'croplist'),
-] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+    url(r'^admin/', admin.site.urls),                                                   #admin site to add, update or delete data
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),     
+    url(r'^house/', views.houselist, name= 'houselist'),                                #get all house table data
+    url(r'^farmer/',views.farmerlist, name= 'farmerlist'),                              #get all farmer table data
+    url(r'^farm/',views.farmlist, name= 'farmlist'),                                    #get all farm table data
+    url(r'^farmpoints/',views.farmpointslist, name= 'farmpointslist'),                  #get all farmpoints table data
+    url(r'^wells/',views.wellslist, name= 'wellslist'),                                 #get all wells table data
+    url(r'^publicplaces/',views.publicplaceslist, name= 'publicplaceslist'),            #get all publicplaces table data
+    url(r'^members/',views.memberslist, name= 'memberslist'),                           #get all members table data
+    url(r'^crop/',views.croplist, name= 'croplist'),                                    #get all crop table data
+] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)                  #add static url to get media (photos, audio clips)
