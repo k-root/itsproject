@@ -12,7 +12,7 @@ class Farmer(models.Model):
     Audio=models.FileField(blank=True)
 
     def __str__(self):
-        return self.Name
+        return self.Name                                                                    #REFERENCE THIS AS ID IN DJANGO ADMIN
 
 class House(models.Model):
     Poi=models.PointField(default="")
@@ -20,7 +20,7 @@ class House(models.Model):
     F_id=models.ForeignKey(Farmer, on_delete=models.CASCADE)
     Village=models.CharField(max_length=20,default="")
     def __str__(self):
-        return self.F_id.Name
+        return self.F_id.Name                                                               #REFERENCE THIS AS ID IN DJANGO ADMIN
 
 class Members(models.Model):
     Name=models.CharField(max_length=50)
@@ -33,7 +33,7 @@ class Members(models.Model):
     F_id=models.ForeignKey(Farmer, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.Name
+        return self.Name                                                                   #REFERENCE THIS AS ID IN DJANGO ADMIN
 
 class PublicPlaces(models.Model):
     Poi=models.PointField(default="")
@@ -42,7 +42,7 @@ class PublicPlaces(models.Model):
     Village=models.CharField(max_length=20,default="")
 
     def __str__(self):
-        return self.Name
+        return self.Name                                                                    #REFERENCE THIS AS ID IN DJANGO ADMIN
 
 class Farm(models.Model):
     Area=models.FloatField()
@@ -51,7 +51,7 @@ class Farm(models.Model):
     Village=models.CharField(max_length=20)
 
     def __str__(self):
-        return self.F_id.Name + str(self.id)
+        return self.F_id.Name + str(self.id)                                               #REFERENCE THIS AS ID IN DJANGO ADMIN
 
 class Farmpoints(models.Model):
     Seqno=models.IntegerField()
@@ -59,7 +59,7 @@ class Farmpoints(models.Model):
     Farm_id=models.ForeignKey(Farm, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.Farm_id.F_id.Name
+        return self.Farm_id.F_id.Name                                                     #REFERENCE THIS AS ID IN DJANGO ADMIN
 
 class Wells(models.Model):
     Poi=models.PointField(default="")
@@ -71,7 +71,7 @@ class Wells(models.Model):
     Village=models.CharField(max_length=20, default="")
     
     def __str__(self):
-        return self.Farm_id.Village
+        return self.Farm_id.Village                                                      #REFERENCE THIS AS ID IN DJANGO ADMIN
 
 class Crop(models.Model):
     Season=models.CharField(max_length=10)
@@ -83,4 +83,4 @@ class Crop(models.Model):
     Farm_id=models.ForeignKey(Farm, on_delete=models.CASCADE)
     
     def __str__(self):
-        return self.Farm_id.F_id.Name + str(self.id)
+        return self.Farm_id.F_id.Name + str(self.id)                                     #REFERENCE THIS AS ID IN DJANGO ADMIN
