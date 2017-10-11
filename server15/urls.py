@@ -37,5 +37,3 @@ urlpatterns = [
     url(r'^members/',views.memberslist, name= 'memberslist'),
     url(r'^crop/',views.croplist, name= 'croplist'),
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
-
-urlpatterns += staticfiles_urlpatterns()
