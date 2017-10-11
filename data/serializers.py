@@ -3,44 +3,44 @@ from rest_framework import serializers
 
 class FarmerSerializer(serializers.ModelSerializer):
   class Meta:
-    model= Farmer
-    fields='__all__'
+    model= Farmer         #TAKE FARMER MODEL
+    fields='__all__'      #TAKE ALL FIELDS FROM THE TABLE
     
 class FarmSerializer(serializers.ModelSerializer):
   class Meta:
-    model= Farm
-    fields='__all__'
+    model= Farm           #TAKE FARM MODEL
+    fields='__all__'      #TAKE ALL FIELDS FROM THE TABLE
     
 class HouseSerializer(serializers.ModelSerializer):
   class Meta:
-    model= House
-    fields='__all__'
+    model= House          #TAKE HOUSE MODEL
+    fields='__all__'      #TAKE ALL FIELDS FROM THE TABLE
     
 
 class FarmpointsSerializer(serializers.ModelSerializer):
   class Meta:
-    model= Farmpoints
-    fields='__all__'
+    model= Farmpoints     #TAKE FARMPOINTS MODEL
+    fields='__all__'      #TAKE ALL FIELDS FROM THE TABLE
 
 
 class WellsSerializer(serializers.ModelSerializer):
   class Meta:
-    model= Wells
-    fields='__all__'
+    model= Wells          #TAKE WELLS MODEL
+    fields='__all__'      #TAKE ALL FIELDS FROM THE TABLE
     
 
 class CropSerializer(serializers.ModelSerializer):
   class Meta:
-    model= Crop
-    fields='__all__'
+    model= Crop           #TAKE CROP MODEL
+    fields='__all__'      #TAKE ALL FIELDS FROM THE TABLE
 
 
 class MembersSerializer(serializers.ModelSerializer):
   class Meta:
-    model= Members
-    fields='__all__'
+    model= Members        #TAKE MEMBERS MODEL
+    fields='__all__'      #TAKE ALL FIELDS FROM THE TABLE
     
 class PublicPlacesSerializer(serializers.ModelSerializer):
   class Meta:
-    model= PublicPlaces
-    fields='__all__'
+    model= PublicPlaces    #TAKE PUBLICPLACES MODEL
+    fields='__all__'      #TAKE ALL FIELDS FROM THE TABLE
