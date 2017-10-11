@@ -51,7 +51,7 @@ class Farm(models.Model):
     Village=models.CharField(max_length=20)
 
     def __str__(self):
-        return self.F_id.Name
+        return self.F_id.Name + self.F_id 
 
 class Farmpoints(models.Model):
     Seqno=models.IntegerField()
