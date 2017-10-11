@@ -37,10 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.gis',
+    'django.contrib.gis',       #REGISTERING POSTGIS
+    #LOGGING OUR APPS  
     'data',
-    'rest_framework',
-    'rest_framework_gis',
+    'rest_framework',           #REGISTERING RESTFRAMEWORK
+    'rest_framework_gis',       #REGISTERING RESTFARMEWORK GIS
 ]
 
 REST_FRAMEWORK = {
