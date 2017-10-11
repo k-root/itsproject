@@ -8,7 +8,7 @@ class Farmer(models.Model):
     Aadhar=models.CharField(max_length=12)
     Number=models.CharField(max_length=10)
     Income=models.IntegerField()
-    Photo=models.CharField(max_length)
+    Photo=models.CharField(max_length=50)
     Audio=models.FileField(blank=True)
 
     def __str__(self):
