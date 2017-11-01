@@ -9,7 +9,7 @@ class FarmerSerializer(serializers.ModelSerializer):
 class CropInfoSerializer(serializers.ModelSerializer):
   class Meta:
      models=CropInfo
-     fields='__all__"
+     fields='__all__'
         
 class FarmSerializer(serializers.ModelSerializer):
   class Meta:
