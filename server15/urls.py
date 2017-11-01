@@ -29,6 +29,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),                                                   #admin site to add, update or delete data
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),     
     url(r'^house/', views.houselist, name= 'houselist'),                                #get all house table data
+    url(r'^cropinfo/', views.cropinfolist, name= 'cropinfolist'),
     url(r'^farmer/',views.farmerlist, name= 'farmerlist'),                              #get all farmer table data
     url(r'^farm/',views.farmlist, name= 'farmlist'),                                    #get all farm table data
     url(r'^farmpoints/',views.farmpointslist, name= 'farmpointslist'),                  #get all farmpoints table data
