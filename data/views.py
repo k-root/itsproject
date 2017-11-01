@@ -54,6 +54,13 @@ def croplist(request):
 
 
 @detail_route(renderer_classes=(renderers.StaticHTMLRenderer,))
+@csrf_exempt 
+def cropinfolist(request):
+    cropinfo=CropInfo.objects.all()
+    cropinfo=CropInfoSerializer(cropinfo,many=True)
+    return JsonResponse(cropinfo.data, status=201, safe=False)
+
+@detail_route(renderer_classes=(renderers.StaticHTMLRenderer,))
 @csrf_exempt                                                        #REQUEST EXEMPTION FROM csrf ERRORS
 def memberslist(request):
  # if request.method == 'POST':
