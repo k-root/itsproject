@@ -6,6 +6,11 @@ class FarmerSerializer(serializers.ModelSerializer):
     model= Farmer         #TAKE FARMER MODEL
     fields='__all__'      #TAKE ALL FIELDS FROM THE TABLE
     
+class CropInfo(serializers.ModelSerializer):
+  class Meta:
+     models=CropInfo
+     fields='__all__"
+        
 class FarmSerializer(serializers.ModelSerializer):
   class Meta:
     model= Farm           #TAKE FARM MODEL
