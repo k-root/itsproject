@@ -73,6 +73,22 @@ class Wells(models.Model):
     def __str__(self):
         return self.Farm_id.Village                                                      #REFERENCE THIS AS ID IN DJANGO ADMIN
 
+    
+class CropInfo(models.Model):
+    Name=models.CharField(max_length=20)
+    month1=models.FloatField()
+    month2=models.FloatField()
+    month3=models.FloatField()
+    month4=models.FloatField()
+    month5=models.FloatField()
+    month6=models.FloatField()
+    month7=models.FloatField()
+    month8=models.FloatField()
+    month9=models.FloatField()
+    
+    def __str__(self):
+        return self.Name
+    
 class Crop(models.Model):
     Season=models.CharField(max_length=10)
     Year=models.IntegerField()
