@@ -8,7 +8,7 @@ class Farmer(models.Model):
     Aadhar=models.CharField(max_length=12)
     Number=models.CharField(max_length=10)
     Income=models.IntegerField()
-    Photo=models.CharField(max_length=50)
+    Photo=models.CharField(max_length=70)
     Audio=models.FileField(blank=True)
 
     def __str__(self):
@@ -66,7 +66,7 @@ class Wells(models.Model):
     Depth=models.FloatField()
     Status=models.BooleanField()
     AvgYield=models.FloatField()
-    Photo=models.CharField(max_length=50)
+    Photo=models.CharField(max_length=70)
     Farm_id=models.ForeignKey(Farm, on_delete=models.CASCADE)
     Village=models.CharField(max_length=20, default="")
     
@@ -85,6 +85,7 @@ class CropInfo(models.Model):
     month7=models.FloatField()
     month8=models.FloatField()
     month9=models.FloatField()
+    imagelink=models.CharField(max_length=70)
     
     def __str__(self):
         return self.Name
@@ -95,7 +96,7 @@ class Crop(models.Model):
     Name=models.CharField(max_length=20)
     Percentage=models.FloatField()
     Income=models.IntegerField()
-    Photo=models.CharField(max_length=50)
+    Photo=models.CharField(max_length=70)
     Farm_id=models.ForeignKey(Farm, on_delete=models.CASCADE)
     
     def __str__(self):
