@@ -85,7 +85,7 @@ class CropInfo(models.Model):
     month7=models.FloatField()
     month8=models.FloatField()
     month9=models.FloatField()
-    imagelink=models.CharField(max_length=70,default="")
+    imagelink=models.CharField(max_length=200,default="")
     
     def __str__(self):
         return self.Name
