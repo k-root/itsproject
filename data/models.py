@@ -101,3 +101,13 @@ class Crop(models.Model):
     
     def __str__(self):
         return self.Farm_id.F_id.Name + str(self.id)                                     #REFERENCE THIS AS ID IN DJANGO ADMIN
+
+ class Store(models.model):
+    Name=models.CharField(max_length=20)
+    Category=models.CharField(max_length=20)
+    Price=models.IntegerField()
+    Availability=models.BooleanField()
+    Img=models.CharField(max_length=200, default="")
+    
+    def __str__(self):
+        return self.Name + str(self.Category)
